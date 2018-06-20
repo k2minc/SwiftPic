@@ -1,6 +1,6 @@
 # SwiftPic
 
-[![CI Status](https://img.shields.io/travis/abrown252@gmail.com/SwiftPic.svg?style=flat)](https://travis-ci.org/abrown252@gmail.com/SwiftPic)
+[![CI Status](https://img.shields.io/travis/abrown252@gmail.com/SwiftPic.svg?style=flat)](https://travis-ci.org/k2minc/SwiftPic)
 [![Version](https://img.shields.io/cocoapods/v/SwiftPic.svg?style=flat)](https://cocoapods.org/pods/SwiftPic)
 [![License](https://img.shields.io/cocoapods/l/SwiftPic.svg?style=flat)](https://cocoapods.org/pods/SwiftPic)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftPic.svg?style=flat)](https://cocoapods.org/pods/SwiftPic)
