@@ -1,4 +1,4 @@
-![swiftpic](https://user-images.githubusercontent.com/662520/41668914-5e8448a0-74a8-11e8-858f-0497367e4f62.png)
+![swiftpic](https://user-images.githubusercontent.com/662520/41668998-959c19b2-74a8-11e8-9f7b-0112c07e5040.png)
 # 
 
 [![CI Status](https://img.shields.io/travis/abrown252@gmail.com/SwiftPic.svg?style=flat)](https://travis-ci.org/k2minc/SwiftPic)
