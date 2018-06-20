@@ -9,7 +9,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-![ezgif com-video-to-gif](https://user-images.githubusercontent.com/662520/41655864-25723bac-7486-11e8-9e72-b4c71794d2df.gif)
+![ezgif com-resize](https://user-images.githubusercontent.com/662520/41655952-65cfcd18-7486-11e8-8a94-422f50430d69.gif)
 
 ## Requirements
 
