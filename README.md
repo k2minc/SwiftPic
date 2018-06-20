@@ -22,7 +22,7 @@ pod 'SwiftPic'
 
 ## Author
 
-abrown252@gmail.com, abrown252@gmail.com
+K2M
 
 ## License
 
