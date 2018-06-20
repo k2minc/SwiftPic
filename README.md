@@ -1,4 +1,5 @@
-# SwiftPic
+![swiftpic](https://user-images.githubusercontent.com/662520/41668914-5e8448a0-74a8-11e8-858f-0497367e4f62.png)
+# 
 
 [![CI Status](https://img.shields.io/travis/abrown252@gmail.com/SwiftPic.svg?style=flat)](https://travis-ci.org/k2minc/SwiftPic)
 [![Version](https://img.shields.io/cocoapods/v/SwiftPic.svg?style=flat)](https://cocoapods.org/pods/SwiftPic)
