@@ -1,0 +1,6 @@
+framework module Pods_SwiftPic_Example {
+  umbrella header "Pods-SwiftPic_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

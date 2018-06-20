@@ -1,0 +1,22 @@
+{
+  "name": "SwiftPic",
+  "version": "0.1.0",
+  "summary": "A short description of SwiftPic.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/abrown252@gmail.com/SwiftPic",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "abrown252@gmail.com": "abrown252@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/abrown252@gmail.com/SwiftPic.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SwiftPic/Classes/**/*"
+}

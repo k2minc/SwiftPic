@@ -1,0 +1,6 @@
+framework module SwiftPic {
+  umbrella header "SwiftPic-umbrella.h"
+
+  export *
+  module * { export * }
+}

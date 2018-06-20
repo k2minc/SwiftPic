@@ -21,22 +21,21 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/abrown252@gmail.com/SwiftPic'
+  s.homepage         = 'https://github.com/k2minc/SwiftPic.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'abrown252@gmail.com' => 'abrown252@gmail.com' }
-  s.source           = { :git => 'https://github.com/abrown252@gmail.com/SwiftPic.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/k2minc/SwiftPic.git', :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/alex_brown23'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'SwiftPic/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'SwiftPic' => ['SwiftPic/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'SwiftPic' => ['SwiftPic/Assets/*.png']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
