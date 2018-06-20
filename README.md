@@ -22,7 +22,7 @@ it, simply add the following line to your Podfile:
 pod 'SwiftPic'
 ```
 
-# Usage
+## Usage
 
 ### Presenting the ImageViewController 
 
