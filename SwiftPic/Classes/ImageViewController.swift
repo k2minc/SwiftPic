@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+public class ImageViewController: UIViewController {
 
     @IBOutlet weak var imageTitle: UILabel!
     @IBOutlet weak var headerView: UIView!
@@ -17,13 +17,15 @@ class ImageViewController: UIViewController {
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     
     var viewModel: ImageViewControllerViewModel
+    // Tracks whether the user is scrolling, we use this to bypass the system calling scrollview delegate methods automatically
+    var isUserScrolling = false
     
     var scrollViewContentSize = CGSize.zero
-    override var prefersStatusBarHidden: Bool {
+    override public var prefersStatusBarHidden: Bool {
         return true
     }
     
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+    override public var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
     
@@ -31,22 +33,23 @@ class ImageViewController: UIViewController {
         return offsetForIndex(index: viewModel.currentIndex)
     }
     
-    init(configuration: ImageViewControllerConfiguration) {
+    public init(configuration: ImageViewControllerConfiguration) {
         viewModel = ImageViewControllerViewModel(configuration: configuration)
-        super.init(nibName: "ImageViewController", bundle: nil)
+        let bundle = Bundle(for: ImageViewController.classForCoder())
+        super.init(nibName: "ImageViewController", bundle: bundle)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init?(coder aDecoder: NSCoder) not supported")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         headerView.alpha = 0
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         updateTitle()
@@ -56,9 +59,10 @@ class ImageViewController: UIViewController {
     }
     
     @objc func orientationChange() {
-        let newFrame = CGRect(x: 0, y: 0, width: scrollView.frame.size.height, height: scrollView.frame.size.width)
+        print(viewModel.currentIndex)
+        let newFrame = scrollView.frame//CGRect(x: 0, y: 0, width: scrollView.frame.size.height, height: scrollView.frame.size.width)
         viewModel.updateImageFrames(newFrame: newFrame)
-        
+        scrollView.contentSize = CGSize(width: CGFloat(viewModel.imageViews.count) * newFrame.size.width, height: newFrame.size.height)
         // Update content offset for new scrollView frame
         scrollView.contentOffset = CGPoint(x: CGFloat(viewModel.currentIndex) * newFrame.size.width, y: 0)
     }
@@ -176,7 +180,7 @@ class ImageViewController: UIViewController {
         return CGFloat(index) * scrollView.frame.size.width
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -203,7 +207,18 @@ extension ImageViewController: ZoomableImageViewDelegate {
 
 extension ImageViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isUserScrolling = true
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        isUserScrolling = false
+    }
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // Unless the user is invoking the scroll we don't want to do anything
+        if !isUserScrolling {return}
+        
         var index = lroundf(Float(scrollView.contentOffset.x / (scrollView.frame.size.width)))
         if index < 0 { index = 0 }
         if index > viewModel.imageViews.count - 1 { index = viewModel.imageViews.count - 1 }
@@ -229,7 +244,7 @@ extension ImageViewController: UIGestureRecognizerDelegate {
      We test both the x and y values and chech which is the greatest (positive or negative); for example a bigger movement along the x axis would
      trigger the swipe (ltr) handler, and a greater movement along the y axis would trigger the swipe/dismiss (utd) handler.
     */
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if
             let gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer,
             let otherGestureRecognizer = otherGestureRecognizer as? UIPanGestureRecognizer {

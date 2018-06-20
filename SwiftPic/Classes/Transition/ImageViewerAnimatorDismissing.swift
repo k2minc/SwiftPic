@@ -9,21 +9,21 @@
 import Foundation
 import UIKit
 
-class ImageViewerAnimatorDismissing: NSObject, UIViewControllerAnimatedTransitioning {
+public class ImageViewerAnimatorDismissing: NSObject, UIViewControllerAnimatedTransitioning {
     
     let originImageView: UIImageView
     let animationTime: Double
     
-    init(originImageView: UIImageView, animationTime: Double) {
+    public init(originImageView: UIImageView, animationTime: Double) {
         self.originImageView = originImageView
         self.animationTime = animationTime
     }
     
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return animationTime
     }
     
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let container = transitionContext.containerView
         guard
             let fromVC = transitionContext.viewController(forKey: .from) as? ImageViewController

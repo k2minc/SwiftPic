@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-struct ImageViewControllerConfiguration {
+public struct ImageViewControllerConfiguration {
     
     let images: [UIImage]
     let startIndex: Int
     
-    var imageIndexChanged: ((Int) -> Void)?
-    var titleForImageAtIndex: ((Int) -> String)?
+    public var imageIndexChanged: ((Int) -> Void)?
+    public var titleForImageAtIndex: ((Int) -> String)?
 
     var currentIndex: Int = 0 {
         didSet {
@@ -29,7 +29,7 @@ struct ImageViewControllerConfiguration {
         return images.count == 1
     }
     
-    init(images: [UIImage], startIndex: Int = 0) {
+    public init(images: [UIImage], startIndex: Int = 0) {
         self.images = images
         self.startIndex = startIndex
     }

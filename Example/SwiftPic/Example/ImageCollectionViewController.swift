@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftPic
 
 private let reuseIdentifier = "Cell"
 

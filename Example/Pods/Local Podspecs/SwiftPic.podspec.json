@@ -1,9 +1,9 @@
 {
   "name": "SwiftPic",
   "version": "0.1.0",
-  "summary": "A short description of SwiftPic.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/abrown252@gmail.com/SwiftPic",
+  "summary": "Image viewer/gallery built in Swift",
+  "description": "An Image viewer and gallery built in swift, inspired by the iOS Photos app.",
+  "homepage": "https://github.com/k2minc/SwiftPic.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,13 @@
     "abrown252@gmail.com": "abrown252@gmail.com"
   },
   "source": {
-    "git": "https://github.com/abrown252@gmail.com/SwiftPic.git",
+    "git": "https://github.com/k2minc/SwiftPic.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "SwiftPic/Classes/**/*"
+  "source_files": "SwiftPic/Classes/**/*",
+  "resources": "SwiftPic/Assets/*.xcassets",
+  "frameworks": "UIKit"
 }

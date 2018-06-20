@@ -11,15 +11,6 @@
 		185476D920DA487E0074C674 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476C720DA487D0074C674 /* ImageCollectionViewController.swift */; };
 		185476DA20DA487E0074C674 /* PlanetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476C820DA487D0074C674 /* PlanetCollectionViewCell.swift */; };
 		185476DB20DA487E0074C674 /* PlanetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185476C920DA487D0074C674 /* PlanetCollectionViewCell.xib */; };
-		185476DD20DA487E0074C674 /* ImageViewerAnimatorPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476CD20DA487E0074C674 /* ImageViewerAnimatorPresenting.swift */; };
-		185476DE20DA487E0074C674 /* ImageViewerAnimatorDismissing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476CE20DA487E0074C674 /* ImageViewerAnimatorDismissing.swift */; };
-		185476DF20DA487E0074C674 /* ImageViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476CF20DA487E0074C674 /* ImageViewControllerViewModel.swift */; };
-		185476E020DA487E0074C674 /* ImageViewControllerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476D020DA487E0074C674 /* ImageViewControllerConfiguration.swift */; };
-		185476E120DA487E0074C674 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476D120DA487E0074C674 /* ImageViewController.swift */; };
-		185476E220DA487E0074C674 /* ImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185476D220DA487E0074C674 /* ImageViewController.xib */; };
-		185476E320DA487E0074C674 /* ZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476D420DA487E0074C674 /* ZoomableImageView.swift */; };
-		185476E420DA487E0074C674 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476D620DA487E0074C674 /* UIView+Animations.swift */; };
-		185476E520DA487E0074C674 /* UIGestureRecognizer+Cancel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476D720DA487E0074C674 /* UIGestureRecognizer+Cancel.swift */; };
 		3F2603918560BD290AA19FD3 /* Pods_SwiftPic_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527A11E57BE649C77971AF9A /* Pods_SwiftPic_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -44,15 +35,6 @@
 		185476C720DA487D0074C674 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		185476C820DA487D0074C674 /* PlanetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetCollectionViewCell.swift; sourceTree = "<group>"; };
 		185476C920DA487D0074C674 /* PlanetCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanetCollectionViewCell.xib; sourceTree = "<group>"; };
-		185476CD20DA487E0074C674 /* ImageViewerAnimatorPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerAnimatorPresenting.swift; sourceTree = "<group>"; };
-		185476CE20DA487E0074C674 /* ImageViewerAnimatorDismissing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerAnimatorDismissing.swift; sourceTree = "<group>"; };
-		185476CF20DA487E0074C674 /* ImageViewControllerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewControllerViewModel.swift; sourceTree = "<group>"; };
-		185476D020DA487E0074C674 /* ImageViewControllerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewControllerConfiguration.swift; sourceTree = "<group>"; };
-		185476D120DA487E0074C674 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		185476D220DA487E0074C674 /* ImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageViewController.xib; sourceTree = "<group>"; };
-		185476D420DA487E0074C674 /* ZoomableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomableImageView.swift; sourceTree = "<group>"; };
-		185476D620DA487E0074C674 /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
-		185476D720DA487E0074C674 /* UIGestureRecognizer+Cancel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Cancel.swift"; sourceTree = "<group>"; };
 		4817B3BCD26EA5DD58894E61 /* Pods-SwiftPic_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPic_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPic_Tests/Pods-SwiftPic_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		527A11E57BE649C77971AF9A /* Pods_SwiftPic_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPic_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* SwiftPic_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPic_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,46 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		185476CB20DA487E0074C674 /* SwiftPic */ = {
-			isa = PBXGroup;
-			children = (
-				185476CC20DA487E0074C674 /* Transition */,
-				185476CF20DA487E0074C674 /* ImageViewControllerViewModel.swift */,
-				185476D020DA487E0074C674 /* ImageViewControllerConfiguration.swift */,
-				185476D120DA487E0074C674 /* ImageViewController.swift */,
-				185476D220DA487E0074C674 /* ImageViewController.xib */,
-				185476D320DA487E0074C674 /* ZoomableImageview */,
-				185476D520DA487E0074C674 /* Helpers */,
-			);
-			path = SwiftPic;
-			sourceTree = "<group>";
-		};
-		185476CC20DA487E0074C674 /* Transition */ = {
-			isa = PBXGroup;
-			children = (
-				185476CD20DA487E0074C674 /* ImageViewerAnimatorPresenting.swift */,
-				185476CE20DA487E0074C674 /* ImageViewerAnimatorDismissing.swift */,
-			);
-			path = Transition;
-			sourceTree = "<group>";
-		};
-		185476D320DA487E0074C674 /* ZoomableImageview */ = {
-			isa = PBXGroup;
-			children = (
-				185476D420DA487E0074C674 /* ZoomableImageView.swift */,
-			);
-			path = ZoomableImageview;
-			sourceTree = "<group>";
-		};
-		185476D520DA487E0074C674 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				185476D620DA487E0074C674 /* UIView+Animations.swift */,
-				185476D720DA487E0074C674 /* UIGestureRecognizer+Cancel.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		185476E620DA48830074C674 /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,7 +110,6 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				185476E620DA48830074C674 /* Example */,
-				185476CB20DA487E0074C674 /* SwiftPic */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -244,7 +185,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				CD8A9D8E4583ACE1EB451A18 /* [CP] Embed Pods Frameworks */,
-				B3610343C8FEF7B1CB487775 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,7 +204,6 @@
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				D2B7047BC66387D7454ED35C /* [CP] Embed Pods Frameworks */,
-				89C712ACCD4A9F661F661318 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,16 +222,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 8K3N9J6Q4V;
+						DevelopmentTeam = 55F688L4SQ;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 55F688L4SQ;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -325,7 +265,6 @@
 				185476DB20DA487E0074C674 /* PlanetCollectionViewCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				185476D820DA487E0074C674 /* ImageCollectionViewController.xib in Resources */,
-				185476E220DA487E0074C674 /* ImageViewController.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,36 +315,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89C712ACCD4A9F661F661318 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftPic_Tests/Pods-SwiftPic_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3610343C8FEF7B1CB487775 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftPic_Example/Pods-SwiftPic_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CD8A9D8E4583ACE1EB451A18 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,16 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185476E520DA487E0074C674 /* UIGestureRecognizer+Cancel.swift in Sources */,
 				185476D920DA487E0074C674 /* ImageCollectionViewController.swift in Sources */,
-				185476DE20DA487E0074C674 /* ImageViewerAnimatorDismissing.swift in Sources */,
-				185476E320DA487E0074C674 /* ZoomableImageView.swift in Sources */,
-				185476DD20DA487E0074C674 /* ImageViewerAnimatorPresenting.swift in Sources */,
-				185476DF20DA487E0074C674 /* ImageViewControllerViewModel.swift in Sources */,
-				185476E020DA487E0074C674 /* ImageViewControllerConfiguration.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				185476E420DA487E0074C674 /* UIView+Animations.swift in Sources */,
-				185476E120DA487E0074C674 /* ImageViewController.swift in Sources */,
 				185476DA20DA487E0074C674 /* PlanetCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,12 +408,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -545,6 +448,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -560,12 +464,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -590,6 +496,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -599,7 +506,7 @@
 			baseConfigurationReference = 86AECBABC6617392638B7DC6 /* Pods-SwiftPic_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8K3N9J6Q4V;
+				DEVELOPMENT_TEAM = 55F688L4SQ;
 				INFOPLIST_FILE = SwiftPic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -615,7 +522,7 @@
 			baseConfigurationReference = EF1A09F2EAA57A8FD3AB66A6 /* Pods-SwiftPic_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8K3N9J6Q4V;
+				DEVELOPMENT_TEAM = 55F688L4SQ;
 				INFOPLIST_FILE = SwiftPic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -630,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1432E5204BD9E6D5821F813B /* Pods-SwiftPic_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 55F688L4SQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -651,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4817B3BCD26EA5DD58894E61 /* Pods-SwiftPic_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 55F688L4SQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
