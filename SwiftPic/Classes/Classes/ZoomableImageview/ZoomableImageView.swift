@@ -9,6 +9,7 @@
 import Foundation
 import AVKit
 
+// MARK: ZoomableImageViewDelegate
 protocol ZoomableImageViewDelegate {
     func zoomableImageViewDidBeginZooming(imageView: ZoomableImageView)
     func zoomableImageViewDidEndZooming(imageView: ZoomableImageView)
@@ -19,8 +20,8 @@ class ZoomableImageView: UIScrollView {
     var zoomDelegate: ZoomableImageViewDelegate?
     
     let image: UIImage
-    
     var imageView: UIImageView?
+    
     var hasLaidOut = false
         
     var panGesture: UIPanGestureRecognizer? {
@@ -51,18 +52,24 @@ class ZoomableImageView: UIScrollView {
         super.init(frame: frame)
     }
     
+    // MARK: UIView methods
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init?(coder aDecoder: NSCoder) not supported")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         if !hasLaidOut {
             setupScrollView()
             addImage()
-            addGestures()
+            addDoubleTapGesture()
         }
         
         hasLaidOut = true
     }
     
+    // MARK: Setup
     func setupScrollView() {
         delegate = self
         minimumZoomScale = 1
@@ -71,11 +78,8 @@ class ZoomableImageView: UIScrollView {
         showsHorizontalScrollIndicator = false
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init?(coder aDecoder: NSCoder) not supported")
-    }
-    
-    func addGestures() {
+    /** Adds the 'double tap to zoom' gesture */
+    func addDoubleTapGesture() {
         guard let imageView = imageView
             else {return}
         
@@ -84,6 +88,20 @@ class ZoomableImageView: UIScrollView {
         imageView.addGestureRecognizer(doubleTap)
     }
     
+    /** Creates and adds the UIImageview instance to the scrollView */
+    func addImage() {
+        var imageViewFrame = frame
+        imageViewFrame.origin = CGPoint.zero
+        imageView = UIImageView(frame: imageViewFrame)
+        imageView!.image = image
+        imageView!.isUserInteractionEnabled = true
+        imageView!.contentMode = .scaleAspectFit
+        addSubview(imageView!)
+    }
+    
+    /**
+     The action for the double tap gesture.
+     */
     @objc func handleDoubleTap(gesture: UITapGestureRecognizer) {
         guard let view = gesture.view
             else {return}
@@ -97,16 +115,6 @@ class ZoomableImageView: UIScrollView {
             let touchLocation = CGRect(x: touchLocation.x - (zoomWidth / 2), y: touchLocation.y - (zoomWidth / 2), width: zoomWidth, height: zoomWidth)
             zoom(to: touchLocation, animated: true)
         }
-    }
-    
-    func addImage() {
-        var imageViewFrame = frame
-        imageViewFrame.origin = CGPoint.zero
-        imageView = UIImageView(frame: imageViewFrame)
-        imageView!.image = image
-        imageView!.isUserInteractionEnabled = true
-        imageView!.contentMode = .scaleAspectFit
-        addSubview(imageView!)
     }
     
     func updateFrame(newFrame: CGRect, for index: Int) {
@@ -132,6 +140,7 @@ class ZoomableImageView: UIScrollView {
     }
 }
 
+// MARK: UIScrollViewDelegate
 extension ZoomableImageView: UIScrollViewDelegate {
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -141,8 +150,6 @@ extension ZoomableImageView: UIScrollViewDelegate {
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
         isZoomed = true
     }
-    
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {}
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale == 1 {

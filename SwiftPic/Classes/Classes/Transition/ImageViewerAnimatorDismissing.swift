@@ -26,7 +26,8 @@ public class ImageViewerAnimatorDismissing: NSObject, UIViewControllerAnimatedTr
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let container = transitionContext.containerView
         guard
-            let fromVC = transitionContext.viewController(forKey: .from) as? ImageViewController
+            let fromVC = transitionContext.viewController(forKey: .from) as? SPImageViewController,
+            let originImage = originImageView.image
             else { return }
         
         let toFrame = originImageView.convert(originImageView.bounds, to: fromVC.view)
@@ -36,14 +37,14 @@ public class ImageViewerAnimatorDismissing: NSObject, UIViewControllerAnimatedTr
         
         let offsetY = fromVC.viewModel.currentImageView().frame.origin.y
         let offsetX: CGFloat = 0
-        let width = originImageView.image!.size.width
-        let height = originImageView.image!.size.height
+        let width = originImage.size.width
+        let height = originImage.size.height
         let aspectRatio = height / width
         let yPos = (targetFrame.size.height / 2) - (targetFrame.width * aspectRatio / 2) + offsetY
         let originFrame = CGRect(x: offsetX, y: yPos, width: targetFrame.width, height: targetFrame.width * aspectRatio)
         
         let imageView = UIImageView(frame: originFrame)
-        imageView.image = originImageView.image
+        imageView.image = originImage
         imageView.contentMode = originImageView.contentMode
         imageView.clipsToBounds = true
         imageView.clearsContextBeforeDrawing = false

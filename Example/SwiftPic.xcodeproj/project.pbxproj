@@ -11,11 +11,13 @@
 		185476D920DA487E0074C674 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476C720DA487D0074C674 /* ImageCollectionViewController.swift */; };
 		185476DA20DA487E0074C674 /* PlanetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185476C820DA487D0074C674 /* PlanetCollectionViewCell.swift */; };
 		185476DB20DA487E0074C674 /* PlanetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185476C920DA487D0074C674 /* PlanetCollectionViewCell.xib */; };
+		188A062220DBF5D800D8D981 /* ZoomableImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A062020DBF58300D8D981 /* ZoomableImageViewTests.swift */; };
+		18CB2DDF20DBA35400D16D82 /* SPConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB2DDB20DBA0A300D16D82 /* SPConfigurationTests.swift */; };
+		18CB2DE020DBA35A00D16D82 /* SPImageViewControllerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB2DDD20DBA25000D16D82 /* SPImageViewControllerViewModelTests.swift */; };
 		3F2603918560BD290AA19FD3 /* Pods_SwiftPic_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527A11E57BE649C77971AF9A /* Pods_SwiftPic_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		D92F2A156407E88F27ADFB4C /* Pods_SwiftPic_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DB836608DAD55A98D022C1 /* Pods_SwiftPic_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,9 @@
 		185476C720DA487D0074C674 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		185476C820DA487D0074C674 /* PlanetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetCollectionViewCell.swift; sourceTree = "<group>"; };
 		185476C920DA487D0074C674 /* PlanetCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanetCollectionViewCell.xib; sourceTree = "<group>"; };
+		188A062020DBF58300D8D981 /* ZoomableImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageViewTests.swift; sourceTree = "<group>"; };
+		18CB2DDB20DBA0A300D16D82 /* SPConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPConfigurationTests.swift; sourceTree = "<group>"; };
+		18CB2DDD20DBA25000D16D82 /* SPImageViewControllerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPImageViewControllerViewModelTests.swift; sourceTree = "<group>"; };
 		4817B3BCD26EA5DD58894E61 /* Pods-SwiftPic_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPic_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPic_Tests/Pods-SwiftPic_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		527A11E57BE649C77971AF9A /* Pods_SwiftPic_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPic_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* SwiftPic_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPic_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,7 +49,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* SwiftPic_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftPic_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		86AECBABC6617392638B7DC6 /* Pods-SwiftPic_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPic_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPic_Example/Pods-SwiftPic_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A7B364C593573458C241E54D /* SwiftPic.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftPic.podspec; path = ../SwiftPic.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C420466276DDC6C04316DE18 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -129,8 +133,10 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				18CB2DDB20DBA0A300D16D82 /* SPConfigurationTests.swift */,
+				18CB2DDD20DBA25000D16D82 /* SPImageViewControllerViewModelTests.swift */,
+				188A062020DBF58300D8D981 /* ZoomableImageViewTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -370,7 +376,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				18CB2DE020DBA35A00D16D82 /* SPImageViewControllerViewModelTests.swift in Sources */,
+				18CB2DDF20DBA35400D16D82 /* SPConfigurationTests.swift in Sources */,
+				188A062220DBF5D800D8D981 /* ZoomableImageViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,7 +28,8 @@ public class ImageViewerAnimatorPresenting: NSObject, UIViewControllerAnimatedTr
         guard
             let toView = transitionContext.view(forKey: .to),
             let toVc = transitionContext.viewController(forKey: .to),
-            let fromVc = transitionContext.viewController(forKey: .from)
+            let fromVc = transitionContext.viewController(forKey: .from),
+            let originImage = originImageView.image
             else { return }
         
         let fromFrame = originImageView.convert(originImageView.bounds, to: fromVc.view)
@@ -44,13 +45,13 @@ public class ImageViewerAnimatorPresenting: NSObject, UIViewControllerAnimatedTr
         fadeInView.backgroundColor = .black
         fadeInView.alpha = 0
         
-        let width = originImageView.image!.size.width
-        let height = originImageView.image!.size.height
+        let width = originImage.size.width
+        let height = originImage.size.height
         
         let targetImageViewSize = AVMakeRect(aspectRatio: CGSize(width: width, height: height), insideRect: targetFrame)
         
         let imageView = UIImageView(frame: fromFrame)
-        imageView.image = originImageView.image
+        imageView.image = originImage
         imageView.contentMode = originImageView.contentMode
         imageView.clipsToBounds = true
         imageView.clearsContextBeforeDrawing = false

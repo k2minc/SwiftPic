@@ -84,7 +84,7 @@ class ImageCollectionViewController: UICollectionViewController {
             selectedCell = cell
         }
         
-        var configuration = ImageViewControllerConfiguration(images: images, startIndex: indexPath.row)
+        var configuration = SPConfiguration(images: images, startIndex: indexPath.row)
         
         configuration.imageIndexChanged = { [weak self] index in
             guard let weakSelf = self
@@ -105,7 +105,7 @@ class ImageCollectionViewController: UICollectionViewController {
             return weakSelf.planetImages[index].name
         }
         
-        let imageDetail = ImageViewController(configuration: configuration)
+        let imageDetail = SPImageViewController(configuration: configuration)
         imageDetail.modalPresentationStyle = .custom
         imageDetail.transitioningDelegate = self
         self.present(imageDetail, animated: true, completion: nil)

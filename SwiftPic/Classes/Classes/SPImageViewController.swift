@@ -8,37 +8,54 @@
 
 import UIKit
 
-public class ImageViewController: UIViewController {
-
+public class SPImageViewController: UIViewController {
+    
+    // MARK: IBOutlets
     @IBOutlet weak var imageTitle: UILabel!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
-    
-    var viewModel: ImageViewControllerViewModel
+    var viewModel: SPImageViewControllerViewModel
     // Tracks whether the user is scrolling, we use this to bypass the system calling scrollview delegate methods automatically
     var isUserScrolling = false
     
     var scrollViewContentSize = CGSize.zero
+    
+    var offsetForCurrentIndex: CGFloat {
+        return CGFloat(viewModel.currentIndex) * scrollView.frame.size.width
+    }
+    
+    
+    // MARK: Status bar
+    
+    // Optimise for a variety of scenarios
     override public var prefersStatusBarHidden: Bool {
-        return true
+        return viewModel.hidesStatusBar
     }
     
     override public var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
+        return viewModel.statusBarHideAnimation
     }
     
-    var offsetForCurrentIndex: CGFloat {
-        return offsetForIndex(index: viewModel.currentIndex)
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        return viewModel.statusBarStyle
     }
     
-    public init(configuration: ImageViewControllerConfiguration) {
-        viewModel = ImageViewControllerViewModel(configuration: configuration)
-        let bundle = Bundle(for: ImageViewController.classForCoder())
+    // MARK: Init
+    /**
+     Requires an instance of SPConfiguration to create the viewModel
+     
+     - parameters configuration: SPConfiguration instance used to create the viewModel
+     */
+    public init(configuration: SPConfiguration) {
+        viewModel = SPImageViewControllerViewModel(configuration: configuration)
+        let bundle = Bundle(for: SPImageViewController.classForCoder())
         super.init(nibName: "ImageViewController", bundle: bundle)
+        
+        modalPresentationCapturesStatusBarAppearance = viewModel.managesOwnStatusBar
     }
     
+    // MARK: UIViewController methods
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init?(coder aDecoder: NSCoder) not supported")
     }
@@ -57,6 +74,11 @@ public class ImageViewController: UIViewController {
         toggleHeaderView(alpha: 1)
     }
     
+    /**
+     The apple prefered way of detecting orientation change. When this is called we can switch the width and the height of ther current
+     frame to get the layout for the frame in the next orientation, then using the UIViewControllerTransitionCoordinator object we can
+     animate these changes.
+     */
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
@@ -76,15 +98,15 @@ public class ImageViewController: UIViewController {
         }
     }
     
-    func updateTitle() {
-        self.imageTitle.text = viewModel.updateTitle()
-    }
-    
+    // MARK: Setup
     func setupScrollView() {
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
     }
     
+    /**
+     Takes images from the viewModel and creates instances of ZoomableImageView to populate the scrollview
+     */
     func loadImages() {
         var contentWidth: CGFloat = 0
         for (index, image) in viewModel.images.enumerated() {
@@ -92,7 +114,7 @@ public class ImageViewController: UIViewController {
             let frame = CGRect(x: xOrigin, y: 0, width: scrollView.frame.size.width, height: scrollView.frame.size.height)
             let scrollableImageView = ZoomableImageView(image: image, frame: frame)
             scrollableImageView.zoomDelegate = self
-            addGestures(imageView: scrollableImageView)
+            addDismissPanGesture(imageView: scrollableImageView)
             scrollView.addSubview(scrollableImageView)
             viewModel.imageViews.append(scrollableImageView)
             
@@ -104,17 +126,38 @@ public class ImageViewController: UIViewController {
         scrollView.contentOffset = CGPoint(x: CGFloat(viewModel.startIndex) * scrollView.frame.size.width, y: 0)
     }
     
-    func addGestures(imageView: ZoomableImageView) {
+    /**
+     Updates the title for the current image index
+     */
+    func updateTitle() {
+        self.imageTitle.text = viewModel.updateTitle()
+    }
+    
+    // MARK: Dismiss Gesture
+    /**
+    Adds the dismiss pan gesture to an instance of ZoomableImageView
+     
+     - parameters imageView: instance of ZoomableImageView to add the gesture to
+     */
+    func addDismissPanGesture(imageView: ZoomableImageView) {
         let imagePaneGesture = UIPanGestureRecognizer(target: self, action: #selector(imagePanned(gesture:)))
         imagePaneGesture.maximumNumberOfTouches = 1
         imagePaneGesture.delegate = self
         imageView.panGesture = imagePaneGesture
     }
     
+    /**
+     The responder for the dismiss image gesture
+     */
     @objc func imagePanned(gesture: UIPanGestureRecognizer) {
         handleMoveGesture(gesture: gesture)
     }
     
+    /**
+     Determines which action to take based on the state of the gesture provided
+     
+     - parameter gesture: UIPanGestureRecognizer instance to handle
+     */
     func handleMoveGesture(gesture: UIPanGestureRecognizer) {
         if gesture.state == .changed {
             panGestureChanged(gesture: gesture)
@@ -123,6 +166,12 @@ public class ImageViewController: UIViewController {
         }
     }
     
+    /**
+     Handles the changed state for the pan gesture. We use this to move the ZoomableImageView instance
+     in line with the users pan.
+     
+     - parameter gesture: UIPanGestureRecognizer instance to handle
+     */
     func panGestureChanged(gesture: UIPanGestureRecognizer) {
         guard let view = gesture.view
             else {return}
@@ -151,6 +200,13 @@ public class ImageViewController: UIViewController {
         toggleHeaderView(alpha: 0)
     }
     
+    /**
+     Handles the ended state for the pan gesture. When the gesture ends we decide
+     whether or not to dismiss the ZomableImageView instance based on it's current distance
+     from it's origin, otherwise animate it back to the start point.
+     
+     - parameter gesture: UIPanGestureRecognizer instance to handle
+     */
     func panGestureEnded(gesture: UIPanGestureRecognizer) {
         guard let view = gesture.view
             else {return}
@@ -170,23 +226,11 @@ public class ImageViewController: UIViewController {
         toggleHeaderView(alpha: 1)
     }
     
-    @objc func toggleControls() {
-        let showing = headerView.alpha > 0
-        if showing {
-            headerView.fadeOut(duration: 0.2)
-        } else {
-            headerView.fadeIn(duration: 0.2)
-        }
-    }
-    
+    /** Fades the title view to the provided alpha value */
     func toggleHeaderView(alpha: CGFloat) {
         if headerView.alpha == alpha {return}
         
         headerView.fadeIn(alpha: alpha, duration: 0.2)
-    }
-    
-    func offsetForIndex(index: Int) -> CGFloat {
-        return CGFloat(index) * scrollView.frame.size.width
     }
     
     override public func didReceiveMemoryWarning() {
@@ -195,26 +239,31 @@ public class ImageViewController: UIViewController {
     }
 }
 
-extension ImageViewController {
+// MARK: IBActions
+extension SPImageViewController {
     @IBAction func closebuttonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
 
-extension ImageViewController: ZoomableImageViewDelegate {
+// MARK: ZoomableImageViewDelegate
+extension SPImageViewController: ZoomableImageViewDelegate {
     
+    /** disables scrolling and hides the header upon zoom */
     func zoomableImageViewDidBeginZooming(imageView: ZoomableImageView) {
         scrollView.isScrollEnabled = false
         toggleHeaderView(alpha: 0)
     }
     
+    /** enables scrolling and shows the header when zoom ends */
     func zoomableImageViewDidEndZooming(imageView: ZoomableImageView) {
         scrollView.isScrollEnabled = true
         toggleHeaderView(alpha: 1)
     }
 }
 
-extension ImageViewController: UIScrollViewDelegate {
+// MARK: UIScrollViewDelegate
+extension SPImageViewController: UIScrollViewDelegate {
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isUserScrolling = true
@@ -228,6 +277,7 @@ extension ImageViewController: UIScrollViewDelegate {
         // Unless the user is invoking the scroll we don't want to do anything
         if !isUserScrolling {return}
         
+        // Update the image index as user scrolls the scroll view
         var index = lroundf(Float(scrollView.contentOffset.x / (scrollView.frame.size.width)))
         if index < 0 { index = 0 }
         if index > viewModel.imageViews.count - 1 { index = viewModel.imageViews.count - 1 }
@@ -238,7 +288,8 @@ extension ImageViewController: UIScrollViewDelegate {
     }
 }
 
-extension ImageViewController: UIGestureRecognizerDelegate {
+// MARK: UIGestureRecognizerDelegate
+extension SPImageViewController: UIGestureRecognizerDelegate {
     /// Returns the distance of a given number from zero as a positive value. For example -100 would return 100.
     func positiveDistanceFromZero(_ value: CGFloat) -> CGFloat {
         var distance = value

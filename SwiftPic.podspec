@@ -35,4 +35,10 @@ DESC
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
+  
+  s.test_spec 'Tests' do |test_spec|
+      test_spec.source_files = 'Tests/*.swift'
+      test_spec.dependency 'Quick'
+      test_spec.dependency 'Nimble'
+  end
 end

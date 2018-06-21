@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewController" customModule="SwiftPic" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SPImageViewController" customModule="SwiftPic" customModuleProvider="target">
             <connections>
                 <outlet property="headerView" destination="7Qr-YL-ij9" id="xub-uH-Uat"/>
                 <outlet property="imageTitle" destination="skY-FI-ybe" id="lDt-El-i1x"/>
@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfg-RV-Atv">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <rect key="frame" x="0.0" y="84" width="375" height="694"/>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qr-YL-ij9">
                     <rect key="frame" x="0.0" y="44" width="375" height="40"/>
@@ -65,8 +65,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vfg-RV-Atv" secondAttribute="trailing" id="Hit-2R-zhZ"/>
                 <constraint firstItem="7Qr-YL-ij9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="U5M-dz-lvz"/>
                 <constraint firstItem="Vfg-RV-Atv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WPQ-Pg-tIE"/>
-                <constraint firstAttribute="bottom" secondItem="Vfg-RV-Atv" secondAttribute="bottom" id="WkO-kJ-s67"/>
-                <constraint firstItem="Vfg-RV-Atv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fae-UI-V1L"/>
+                <constraint firstItem="Vfg-RV-Atv" firstAttribute="top" secondItem="7Qr-YL-ij9" secondAttribute="bottom" id="cz0-Yy-8wg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Vfg-RV-Atv" secondAttribute="bottom" id="ksf-ah-6jh"/>
                 <constraint firstItem="7Qr-YL-ij9" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="m49-2K-tGA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
