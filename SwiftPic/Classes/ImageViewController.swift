@@ -46,7 +46,6 @@ public class ImageViewController: UIViewController {
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         headerView.alpha = 0
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
     override public func viewDidAppear(_ animated: Bool) {
@@ -58,13 +57,23 @@ public class ImageViewController: UIViewController {
         toggleHeaderView(alpha: 1)
     }
     
-    @objc func orientationChange() {
-        print(viewModel.currentIndex)
-        let newFrame = scrollView.frame//CGRect(x: 0, y: 0, width: scrollView.frame.size.height, height: scrollView.frame.size.width)
-        viewModel.updateImageFrames(newFrame: newFrame)
-        scrollView.contentSize = CGSize(width: CGFloat(viewModel.imageViews.count) * newFrame.size.width, height: newFrame.size.height)
-        // Update content offset for new scrollView frame
-        scrollView.contentOffset = CGPoint(x: CGFloat(viewModel.currentIndex) * newFrame.size.width, y: 0)
+    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        let newFrame = CGRect(x: 0, y: 0, width: scrollView.frame.size.height, height: scrollView.frame.size.width)
+        
+        coordinator.animate(alongsideTransition: { (transitionCoordinator) in
+            self.viewModel.setImageVisibility(hidden: true)
+            
+            self.viewModel.updateImageFrames(newFrame: newFrame)
+            // Update content offset for new scrollView frame
+            self.scrollView.contentSize = CGSize(width: CGFloat(self.viewModel.imageViews.count) * newFrame.size.width, height: newFrame.size.height)
+            self.scrollView.contentOffset = CGPoint(x: CGFloat(self.viewModel.currentIndex) * newFrame.size.width, y: 0)
+            
+        }) { (transitionCoordinator) in
+            self.viewModel.setImageVisibility(hidden: false)
+            
+        }
     }
     
     func updateTitle() {

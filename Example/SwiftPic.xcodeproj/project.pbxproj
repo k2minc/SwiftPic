@@ -46,7 +46,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		86AECBABC6617392638B7DC6 /* Pods-SwiftPic_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPic_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPic_Example/Pods-SwiftPic_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A7B364C593573458C241E54D /* SwiftPic.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftPic.podspec; path = ../SwiftPic.podspec; sourceTree = "<group>"; };
+		A7B364C593573458C241E54D /* SwiftPic.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftPic.podspec; path = ../SwiftPic.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C420466276DDC6C04316DE18 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CA6995BB5E6FCBEEB76F7DB9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D6DB836608DAD55A98D022C1 /* Pods_SwiftPic_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPic_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -514,6 +514,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -530,6 +531,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -552,6 +554,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftPic_Example.app/SwiftPic_Example";
 			};
 			name = Debug;
 		};
@@ -570,6 +573,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftPic_Example.app/SwiftPic_Example";
 			};
 			name = Release;
 		};

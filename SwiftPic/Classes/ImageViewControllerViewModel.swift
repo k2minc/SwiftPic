@@ -69,6 +69,14 @@ struct ImageViewControllerViewModel {
             imageView.updateFrame(newFrame: newFrame, for: index)
         }
     }
+    
+    func setImageVisibility(hidden: Bool) {
+        for (index, imageView) in imageViews.enumerated() {
+            if index != currentIndex {
+                imageView.isHidden = hidden
+            }
+        }
+    }
 }
 
 
