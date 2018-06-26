@@ -221,9 +221,10 @@ public class SPImageViewController: UIViewController {
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
                 self.viewModel.currentImageView().frame = frame
                 self.view.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
-            }, completion: nil)
+            }, completion: { compete in
+                self.toggleHeaderView(alpha: 1)
+            })
         }
-        toggleHeaderView(alpha: 1)
     }
     
     /** Fades the title view to the provided alpha value */
