@@ -1,7 +1,7 @@
 PODS:
   - Nimble (7.0.3)
   - Quick (1.2.0)
-  - SwiftPic (0.3.0)
+  - SwiftPic (0.3.2)
 
 DEPENDENCIES:
   - Nimble (~> 7.0.2)
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  SwiftPic: f38dff45397a2d7e247dd907c415cadb1f88886a
+  SwiftPic: d038057cefa06e6f27bf1f6577cc7b2cc5ad7645
 
 PODFILE CHECKSUM: c5a0ff84baeefa64738f0154468c13c9c2a44dea
 

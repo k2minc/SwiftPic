@@ -1,6 +1,6 @@
 {
   "name": "SwiftPic",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "summary": "Image viewer/gallery built in Swift",
   "description": "An Image viewer and gallery built in swift, inspired by the iOS Photos app.",
   "homepage": "https://github.com/k2minc/SwiftPic.git",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/k2minc/SwiftPic.git",
-    "tag": "0.3.0"
+    "tag": "0.3.2"
   },
   "social_media_url": "https://twitter.com/alex_brown23",
   "platforms": {
