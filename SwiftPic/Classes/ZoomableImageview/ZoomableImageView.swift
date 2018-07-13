@@ -92,10 +92,10 @@ class ZoomableImageView: UIScrollView {
     func addImage() {
         var imageViewFrame = frame
         imageViewFrame.origin = CGPoint.zero
+        imageView!.contentMode = .scaleAspectFit
         imageView = UIImageView(frame: imageViewFrame)
         imageView!.image = image
         imageView!.isUserInteractionEnabled = true
-        imageView!.contentMode = .scaleAspectFit
         addSubview(imageView!)
     }
     
